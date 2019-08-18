@@ -12,12 +12,8 @@ function fuzzyMatch(list, name) {
 }
   
 function matchName(drivers, name) {
-  let matching = [];
-  for (const driver of drivers) {
-    if (driver.name === name) {
-      matching.push(driver);
-    } 
-  }
-  return matching;
+  return drivers.filter(function (driver) {
+      return driver.name.toLowerCase() === name.toLowerCase();
+  });
 }
 
